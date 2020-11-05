@@ -1,0 +1,21 @@
+.container {
+    margin: auto;  
+}
+
+.left-block {
+    float: left;
+    clear: left;
+    
+}
+
+.right-block {
+    float: right;
+    clear: right;
+}
+
+@media only screen and (min-width: 1000px) {
+    .container {
+        width: 1000px;
+        margin: auto;
+    }
+}
