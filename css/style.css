@@ -13,6 +13,57 @@
     clear: right;
 }
 
+.title, .searchBox {
+    margin-top: 20px;
+}
+
+#navbar {
+    float: left;
+    clear: both;
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#main-text {
+    float: left;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+#text-bottom {
+    
+    margin-left: 200px;
+    margin-right: 200px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+#small-container {
+    
+}
+
+#main {
+    width: 558px;
+    height: 450px;
+    float: left;
+    clear: both;
+    margin-top: 5px;
+    background-color: black;
+}
+
+.small-box {
+    width: 372px;
+    height: 152px;
+    background-color: black;
+    float: left;
+    margin-left: 20px;
+    margin-top: 5px;
+  
+}
+
 @media only screen and (min-width: 1000px) {
     .container {
         width: 1000px;
