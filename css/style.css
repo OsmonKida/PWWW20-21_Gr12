@@ -1,20 +1,21 @@
 .container {
     margin: auto;  
 }
-
+/* headeri bashk me titull */
+/*--------------------------------------------------------------*/
 .left-block {
     float: left;
     clear: left;
 }
 
-.icon{
-    width: 37px;
-    margin-left: 7px;
-}
-
 .right-block {
     float: right;
     clear: right;
+}
+
+.icon{
+    width: 37px;
+    margin-left: 7px;
 }
 
 .title, .searchBox {
@@ -25,6 +26,9 @@
     border-color: brown;
 }
 
+/*------------------------------------------------------------- */
+/* Ballina kryesore bashk me navbar*/
+/*------------------------------------------------------------- */
 #navbar {
     float: left;
     clear: both;
@@ -39,22 +43,6 @@
     text-align: center;
     width: 100%;
     margin-top: 50px;
-}
-
-#text-bottom {
-    
-    margin-left: 200px;
-    margin-right: 200px;
-    float: left;
-    margin-bottom: 20px;
-}
-fieldset{
-    float: left;
-    clear: both ;
-}
-
-#small-container {
-    
 }
 
 #main {
@@ -73,8 +61,58 @@ fieldset{
     float: left;
     margin-left: 20px;
     margin-top: 1px;
-  
 }
+
+/*------------------------------------------------------------- */
+
+#box-left {
+    width: 490px;
+    float: left;
+    clear: both;
+    margin-top: 20px;
+}
+
+#box-right {
+    width: 490px;
+    height: 300px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.circled-photo {
+    float: left;
+    clear: left;
+    
+}
+.info {
+    float: left;
+    width: 70%;
+    
+}
+
+.person-info {
+    float: left;
+    width: 245px;
+    
+}
+
+#box-4 {
+    background-color: bisque;
+    clear: both;
+    overflow: auto;
+}
+
+ .about-us-block {
+    width: 330px;
+    float: left;
+    
+} 
+
+footer {
+    clear: both;
+}
+
 
 @media only screen and (min-width: 1000px) {
     .container {
