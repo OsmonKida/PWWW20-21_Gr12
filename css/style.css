@@ -12,27 +12,7 @@
     float: right;
     clear: right;
 }
-#linkedin{
-    width: 37px;
-    margin-left: 7px;
-    opacity: 0.3;
-}
-#twitter{
-    width: 37px;
-    margin-left: 7px;
-    opacity: 0.3;
-}
-#pinterest{
-    width: 37px;
-    margin-left: 7px;
-    opacity: 0.3;
-}
-#googlePlus{
-    width: 37px;
-    margin-left: 7px;
-    opacity: 0.3;
-}
-#rssFeed{
+.icon{
     width: 37px;
     margin-left: 7px;
     opacity: 0.3;
