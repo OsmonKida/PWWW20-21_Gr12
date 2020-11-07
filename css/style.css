@@ -12,10 +12,46 @@
     float: right;
     clear: right;
 }
-
-.icon{
+#linkedin{
     width: 37px;
     margin-left: 7px;
+    opacity: 0.3;
+}
+#twitter{
+    width: 37px;
+    margin-left: 7px;
+    opacity: 0.3;
+}
+#pinterest{
+    width: 37px;
+    margin-left: 7px;
+    opacity: 0.3;
+}
+#googlePlus{
+    width: 37px;
+    margin-left: 7px;
+    opacity: 0.3;
+}
+#rssFeed{
+    width: 37px;
+    margin-left: 7px;
+    opacity: 0.3;
+}
+
+#linkedin:hover{
+    opacity: 1;
+}
+#twitter:hover{
+    opacity: 1;
+}
+#pinterest:hover{
+    opacity: 1;
+}
+#googlePlus:hover{
+    opacity: 1;
+}
+#rssFeed:hover{
+    opacity: 1;
 }
 
 .title, .searchBox {
