@@ -5,11 +5,7 @@
 .left-block {
     float: left;
     clear: left;
-}
-
-.icon{
-    width: 37px;
-    margin-left: 7px;
+    
 }
 
 .right-block {
@@ -19,10 +15,6 @@
 
 .title, .searchBox {
     margin-top: 20px;
-}
-
-#header1{
-    border-color: brown;
 }
 
 #navbar {
