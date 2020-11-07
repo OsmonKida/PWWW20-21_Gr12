@@ -48,6 +48,10 @@
     float: left;
     margin-bottom: 20px;
 }
+fieldset{
+    float: left;
+    clear: both;
+}
 
 #small-container {
     
