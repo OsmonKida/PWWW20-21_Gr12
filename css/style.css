@@ -12,6 +12,15 @@
     float: right;
     clear: right;
 }
+.links{
+    position: relative;
+}
+svg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
 .icon{
     width: 37px;
     margin-left: 7px;
@@ -39,7 +48,7 @@
 }
 
 #header1{
-    border-color: brown;
+    border-color: #331800;
 }
 
 /*------------------------------------------------------------- */
@@ -127,6 +136,10 @@
 
 footer {
     clear: both;
+}
+.footer{
+    position: relative;
+    color: #e2af80;
 }
 
 
