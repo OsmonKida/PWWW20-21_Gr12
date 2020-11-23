@@ -1,15 +1,28 @@
 .container {
     margin: auto;  
 }
+@media only screen and (min-width: 1000px) {
+    .container {
+        width: 1000px;
+        margin: auto;
+    }
+}
+
 /* headeri bashk me titull */
 /*--------------------------------------------------------------*/
+#header1 {
+    background-color: #3c2520;
+    height: 50px ;
+}
+
 .left-block {
     float: left;
     clear: left;
+    padding-left: 20px;
 }
 
 .left-block a{
-    color: #c5b3a0;
+    color: #957964;
     text-decoration: none;
 
 }
@@ -17,10 +30,13 @@
 .right-block {
     float: right;
     clear: right;
+    padding-right: 20px;
 }
 .links{
     position: relative;
     padding-top: 11px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 svg{
@@ -55,15 +71,26 @@ svg{
     margin-top: 20px;
 }
 
-#header1{
+/* #header1{
     border-color: #380d0d ;
-}
+} */
 
 .right-block input[type=submit] { 
-    /*your styles here.....*/
-    background-color:  #380d0d;
-        color: #e9ddd0;
- 
+    background-color: #3c2520;
+    color: white;
+    width: 70px;
+    height: 25px;
+    font-weight: bold;
+    border: 0px;
+    font-size: 14px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.right-block input[type=submit]:hover {
+    background-color: #957964;
+}
+.right-block input[type=text] {
+    height: 20px;
 }
 
 
@@ -71,12 +98,52 @@ svg{
 /*------------------------------------------------------------- */
 /* Ballina kryesore bashk me navbar*/
 /*------------------------------------------------------------- */
-#navbar {
+ #navbar {
     float: left;
     clear: both;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 25px;
     text-align: center;
+ }
+
+#navbar ul {
+    padding: 0;
+    padding-top: 20px;
+    font-size: 15px;
+    list-style-type: none;
+    overflow:auto;
+    white-space:nowrap; 
+    /* height: 1em; */
+     width: 100%;
+     height:58px;
+}
+#navbar ul  li{
+    display: inline-block;
+}
+#navbar ul li a{
+    
+    text-align: center;
+    text-decoration: none;
+    color: #eee;
+    padding:20px 24px;
+    background-color: #3c2520;
+    /* border-top:px solid #815444;
+    border-right:2px solid #3d1000;
+    border-bottom:2px solid #3d1000;
+    border-left:2px solid #815444; */
+}
+
+#navbar ul li a:hover{
+    background-color:#957964;
+}
+#navbar ul li:first-child a {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#navbar ul li:last-child a {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-right: 30px;
 }
 
 #main-text {
@@ -94,6 +161,7 @@ svg{
     clear: both;
     margin-top: 5px;
     background-color: rgb(56, 56, 56);
+    margin-left: 20px;
 }
 
 .small-box {
@@ -101,26 +169,28 @@ svg{
     height: 152px;
     background-color: rgb(56, 56, 56) ;
     float: left;
-    margin-left: 20px;
+    margin-left: 30px;
     margin-top: 1px;
 }
 
 /*------------------------------------------------------------- */
 
 #box-left {
-    width: 490px;
+    width: 470px;
     float: left;
     clear: both;
-    margin-top: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-right: 20px;
     
 }
 
 #box-right {
-    width: 490px;
+    width: 470px;
     height: 300px;
     float: left;
-    margin-top: 20px;
-    margin-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
 }
 
 .circled-photo {
@@ -131,43 +201,98 @@ svg{
 }
 .info {
     float: left;
-    width: 70%;
+    width: 300px;
+    margin-left: 22px;
     
 }
 
-.person-info {
+.person-info-left {
     float: left;
-    width: 245px;
-        background-color: rgb(56, 56, 56) ;
+    width: 225px;
+    background-color: rgb(56, 56, 56) ;
+    margin-right: 20px;
+}
 
-    
+.person-info-right {
+    float: left;
+    width: 225px;
+    background-color: rgb(56, 56, 56) ;
 }
 
 #box-4 {
-    background-color: rgb(240, 236, 232);
+    background-color: #efefef;
     clear: both;
     overflow: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
- .about-us-block {
-    width: 330px;
+ #about-us-block-1 {
+    width: 300px;
     float: left;
+    padding-left: 20px;
     
+}
+#about-us-block-1 a{
+    text-decoration: none;
+    color: #957964;
 } 
 
-#box-3 a::after,.about-us-block a::after{
+#about-us-block-2 {
+    float: left;
+    width: 300px;
+    padding-left: 30px;
+
+}
+#about-us-block-3 {
+    width: 300px;
+    padding-left: 30px;
+    float: left;
+}
+
+#box-3 a::after,#about-us-block-1 a::after{
     content: "\00BB";
 }
-.about-us-block ul li{
-    
+#about-us-block-2 ul li {
     list-style: none;
 }
-.about-us-block ul li::before{ 
-    content: "\00BB"; 
+#about-us-block-2 ul {
+    padding: 0;
 }
- .about-us-block input[type=submit] { 
+#about-us-block-2 ul  hr {
+    background-color: gray;
+    height: 1px;
+    border: 0px;
+}
+#about-us-block-2 ul li a{
+    text-decoration: none;
+    color: #957964;
+}
+#about-us-block-2 ul li::before{ 
+    content: "\00BB "; 
+    color: #957964;
+}
+
+#about-us-block-3 input[type=text], #about-us-block-3 input[type=email] {
+    height: 30px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #dddddd;
+} 
+ #about-us-block-3 input[type=submit] { 
     /*your styles here.....*/
-    background-color: rgba(201, 164, 63, 0.493);
+    background-color: #380d0d;
+    color: white;
+    width: 90px;
+    height: 35px;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 7px;
+    font-size: 15px;
+ }
+
+ #about-us-block-3 input[type=submit]:hover{
+     background-color:#957964;
  }
  
 
@@ -175,16 +300,8 @@ footer {
     clear: both;
     
 }
-.footer{
-    position: relative;
-    color: #e9ddd0;
-    
-}
-
-
-@media only screen and (min-width: 1000px) {
-    .container {
-        width: 1000px;
-        margin: auto;
-    }
+footer{
+    color: #957964;
+    background-color: #3c2520;
+    height: 50px;
 }
