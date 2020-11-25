@@ -69,6 +69,7 @@ svg{
 
 .title, .searchBox {
     margin-top: 20px;
+    z-index: -1;
 }
 
 /* #header1{
@@ -81,7 +82,7 @@ svg{
     width: 70px;
     height: 25px;
     font-weight: bold;
-    border: 0px;
+    border: 0;
     font-size: 14px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -93,8 +94,58 @@ svg{
     height: 20px;
 }
 
+/*Stilizimi i linqeve shtese*/
+.dropdown {
+    float: right;
+    overflow: hidden;
+}
+/* Butoni i linqeve shtese */
+.dropdown .dropbtn {
+    font-size: 10px;
+    border-radius: 0 0 5px 5px;
+    outline: none;
+    color: #eee;
+    padding: 10px 12px;
+    background-color: #957964;
+    /* Te rendesishme per radhitje vertikale ne smartphone (font-family dhe margin-right).*/
+    font-family: inherit;
+    margin-right: 1rem;
+}
 
+/* Shto ngjyren e kuqe kur gjendemi me maus mbi buton */
+.dropdown:hover .dropbtn {
+    background-color: #f12024;
+}
 
+/* Permbajtja e butonit (by-default eshte e fshehur) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #957964;
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Linqet brenda permbajtjes se butonit */
+.dropdown-content a {
+    float: none;
+    color: #eee;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Shtimi i ngjyres se kuqe kur gjendemi me maus mbi link */
+.dropdown-content a:hover {
+    background-color: #f12024;
+}
+
+/* Kur gjendemi me maus mbi buton, shfaqi linqet shtese */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 /*------------------------------------------------------------- */
 /* Ballina kryesore bashk me navbar*/
 /*------------------------------------------------------------- */
@@ -262,7 +313,7 @@ svg{
 #about-us-block-2 ul  hr {
     background-color: gray;
     height: 1px;
-    border: 0px;
+    border: 0;
 }
 #about-us-block-2 ul li a{
     text-decoration: none;
@@ -276,23 +327,23 @@ svg{
 #about-us-block-3 input[type=text], #about-us-block-3 input[type=email] {
     height: 30px;
     border-radius: 5px;
-    border: 0px;
+    border: 0;
     background-color: #dddddd;
 } 
  #about-us-block-3 input[type=submit] { 
     /*your styles here.....*/
-    background-color: #380d0d;
+    background-color: #957964;
     color: white;
     width: 90px;
     height: 35px;
     font-weight: bold;
-    border: 0px;
+    border: 0;
     border-radius: 7px;
     font-size: 15px;
  }
 
  #about-us-block-3 input[type=submit]:hover{
-     background-color:#957964;
+     background-color:#f12024;
  }
  
 
