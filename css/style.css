@@ -259,15 +259,22 @@ svg{
 
 .person-info-left {
     float: left;
-    width: 225px;
-    background-color: rgb(56, 56, 56) ;
-    margin-right: 20px;
+    width: 200px;
+    height: 250px;
+    /*background-color: rgb(56, 56, 56) ;*/
+    border: 1px solid lightgray;
+    margin-left: 30px;
 }
-
+.person-info-left:hover, .person-info-right:hover{
+    background-color: #957964;
+    color: white;
+}
 .person-info-right {
-    float: left;
-    width: 225px;
-    background-color: rgb(56, 56, 56) ;
+    float: right;
+    width: 200px;
+    height: 250px;
+    /*background-color: rgb(56, 56, 56) ;*/
+    border: 1px solid lightgray;
 }
 
 #box-4 {
@@ -300,9 +307,25 @@ svg{
     padding-left: 30px;
     float: left;
 }
-
 #box-3 a::after,#about-us-block-1 a::after{
     content: "\00BB";
+}
+#box-3 a{
+    text-decoration: none;
+    color: #957964;
+}
+#box-3 span{
+    color: gray;
+}
+#box-4{
+    border-top: 5px solid lightgray;
+    /*margin-top: 30px;*/
+}
+#box-4 span{
+    color: gray;
+}
+#box-4 #email-span{
+    color: #957964;
 }
 #about-us-block-2 ul li {
     list-style: none;
