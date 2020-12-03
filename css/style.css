@@ -71,6 +71,23 @@ svg{
     margin-top: 20px;
     z-index: -1;
 }
+#titleM{
+    font-size: 3.2rem;
+    color: rgba(0,0,0,0.82);
+}
+.left-block h1{
+    color: rgba(0,0,0,0.82);
+}
+.right-block p{
+    text-align: right;
+    color: gray;
+}
+#underTitle{
+    color: gray;
+}
+header{
+    font-family: "serif";
+}
 
 /* #header1{
     border-color: #380d0d ;
@@ -81,7 +98,8 @@ svg{
     color: white;
     width: 70px;
     height: 25px;
-    font-weight: bold;
+    /*font-weight: bold;*/
+    font-family: Serif;
     border: 0;
     font-size: 14px;
     border-top-right-radius: 5px;
@@ -203,6 +221,10 @@ svg{
     text-align: center;
     width: 100%;
     margin-top: 50px;
+    color: gray;
+}
+#main-text span{
+    color: #957964;
 }
 
 #main {
@@ -228,6 +250,7 @@ svg{
 
 #box-left {
     width: 470px;
+    height: 423px;
     float: left;
     clear: both;
     padding-top: 20px;
@@ -238,7 +261,7 @@ svg{
 
 #box-right {
     width: 470px;
-    height: 300px;
+    /*height: 300px;*/
     float: left;
     padding-top: 20px;
     padding-right: 20px;
@@ -259,8 +282,9 @@ svg{
 
 .person-info-left {
     float: left;
+    text-align: center;
     width: 200px;
-    height: 250px;
+    height: 323px;
     /*background-color: rgb(56, 56, 56) ;*/
     border: 1px solid lightgray;
     margin-left: 30px;
@@ -271,20 +295,55 @@ svg{
 }
 .person-info-right {
     float: right;
+    text-align: center;
     width: 200px;
-    height: 250px;
+    height: 323px;
     /*background-color: rgb(56, 56, 56) ;*/
     border: 1px solid lightgray;
 }
-
+#info-left, #info-right{
+    color: gray;
+}
+.person-info-left:hover #info-left{
+    color: white;
+}
+.person-info-right:hover #info-right{
+    color:white;
+}
+#photoDiv1{
+    margin-top: 28px;
+}
+#photo1{
+    height: 123px;
+    width: 123px;
+}
+#photoDiv2{
+    margin-top: 28px;
+}
+#photo2{
+    height: 123px;
+    width: 123px;
+}
 #box-4 {
     background-color: #efefef;
     clear: both;
     overflow: auto;
     padding-top: 20px;
     padding-bottom: 20px;
+    font-family: Rockwell,"Lucida Fax",Serif;
+    border-top: 5px solid lightgray;
 }
-
+#box-3{
+    font-family: Rockwell,"Lucida Fax",Serif;
+}
+#gray-line{
+    display: inline-block;
+}
+#line1,#line2{
+    height: 5px;
+    width: 160px;
+    background-color: lightgray;
+}
  #about-us-block-1 {
     width: 300px;
     float: left;
@@ -317,10 +376,6 @@ svg{
 #box-3 span{
     color: gray;
 }
-#box-4{
-    border-top: 5px solid lightgray;
-    /*margin-top: 30px;*/
-}
 #box-4 span{
     color: gray;
 }
@@ -352,6 +407,7 @@ svg{
     border-radius: 5px;
     border: 0;
     background-color: #dddddd;
+    font-family: Rockwell, "Lucida Fax", Serif;
 } 
  #about-us-block-3 input[type=submit] { 
     /*your styles here.....*/
@@ -359,7 +415,7 @@ svg{
     color: white;
     width: 90px;
     height: 35px;
-    font-weight: bold;
+     font-family: Rockwell, "Lucida Fax", Serif;
     border: 0;
     border-radius: 7px;
     font-size: 15px;
