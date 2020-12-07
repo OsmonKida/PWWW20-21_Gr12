@@ -424,13 +424,9 @@ header{
  #about-us-block-3 input[type=submit]:hover{
      background-color:#f12024;
  }
- 
 
-footer {
-    clear: both;
-    
-}
 footer{
+    clear: both;
     color: #957964;
     background-color: #3c2520;
     height: 50px;
