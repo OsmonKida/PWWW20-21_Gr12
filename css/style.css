@@ -33,6 +33,9 @@
     clear: right;
     padding-right: 20px;
 }
+.right-block a{
+    margin-right: 5px;
+}
 .links{
     position: relative;
     padding-top: 11px;
@@ -40,32 +43,28 @@
     padding-left: 20px;
 }
 
-svg{
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-}
 .icon{
     width: 30px;
-    margin-left: 7px;
-    opacity: 0.3;
+    background-color: #957964;
 }
-
+#linkedin, #twitter, #pinterest, #googlePlus, #rssFeed{
+    border-radius: 15px;
+    background-color: #957964;
+}
 #linkedin:hover{
-    opacity: 1;
+    background-color: #f12024;
 }
 #twitter:hover{
-    opacity: 1;
+    background-color: #f12024;
 }
 #pinterest:hover{
-    opacity: 1;
+    background-color: #f12024;
 }
 #googlePlus:hover{
-    opacity: 1;
+    background-color: #f12024;
 }
 #rssFeed:hover{
-    opacity: 1;
+    background-color: #f12024;
 }
 
 .title, .searchBox {
@@ -128,7 +127,7 @@ header{
     background-color: #957964;
     /* Te rendesishme per radhitje vertikale ne smartphone (font-family dhe margin-right).*/
     font-family: inherit;
-    margin-right: 1rem;
+    margin-right: 1.28rem;
 }
 
 /* Shto ngjyren e kuqe kur gjendemi me maus mbi buton */
