@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="view-hangOut" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet"
+          type = "text/css"
+          href = "css/hangOut-style.css" />
+    <title>Hang Out</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+
+            function handleDragStart(e) {
+                this.style.opacity = '0.4';
+                dragSrcEl = this;
+
+                e.dataTransfer.effectAllowed = 'move';
+                e.dataTransfer.setData('text/html', this.innerHTML);
+            }
+
+            function handleDragEnd(e) {
+                this.style.opacity = '1';
+
+                items.forEach(function (item) {
+                    item.classList.remove('over');
+                });
+            }
+
+            function handleDragOver(e) {
+                if (e.preventDefault) {
+                    e.preventDefault();
+                }
+
+                return false;
+            }
+
+            function handleDragEnter(e) {
+                this.classList.add('over');
+            }
+
+            function handleDragLeave(e) {
+                this.classList.remove('over');
+            }
+            function handleDrop(e) {
+                e.stopPropagation(); // stops the browser from redirecting.
+                if (dragSrcEl !== this) {
+                    dragSrcEl.innerHTML = this.innerHTML;
+                    this.innerHTML = e.dataTransfer.getData('text/html');
+                }
+                return false;
+            }
+
+            let items = document.querySelectorAll('.container .box');
+            items.forEach(function(item) {
+                item.addEventListener('dragstart', handleDragStart, false);
+                item.addEventListener('dragover', handleDragOver, false);
+                item.addEventListener('dragenter', handleDragEnter, false);
+                item.addEventListener('dragleave', handleDragLeave, false);
+                item.addEventListener('dragend', handleDragEnd, false);
+                item.addEventListener('drop', handleDrop, false);
+            });
+        });
+    </script>
+</head>
+<body>
+<div class = "container">
+    <header>
+        <canvas id = "newCanvas" width = "1000" height = "50"></canvas>
+        <script>
+            var c = document.getElementById('newCanvas');
+            var ctx = c.getContext('2d');
+            var grd = ctx.createLinearGradient(0, 0, 1000, 50);
+            grd.addColorStop(0, "#957964");
+            grd.addColorStop(1, "#380d0d");
+            ctx.fillStyle = grd;
+            ctx.fillRect(0,0,1000,50);
+        </script>
+        <div id="header1">
+            <div class="links left-block">
+                <a href="#"> Sign Up |</a> <a href="#"> Login |</a>
+                <a href="#"> RSS Feeds |</a>  <a href="#"> Archived News </a>
+            </div>
+            <div class="links right-block">
+                <a href="https://www.linkedin.com/share"><img src="images/linkedin.png" title="LinkedIn" alt="Link1" class="icon" id="linkedin"></a>
+                <a href="https://www.twitter.com/share"><img src="images/twitter.png" title="Twitter" alt="Link2" class="icon" id="twitter"></a>
+                <a href="https://pinterest.com"><img src="images/pinterest.png" title="Pinterest" alt="Link3" class="icon" id="pinterest"></a>
+                <a href="#"><img src="images/googlePlus.png" title="GoolePlus" alt="Link4" class="icon" id="googlePlus"></a>
+                <a href="#"><img src="images/rssFeed.png" title="RSSFeed" alt="Link5" class="icon" id="rssFeed"></a>
+            </div>
+        </div>
+        <div id="header2">
+            <div class="title left-block">
+                <svg height="100" width="100">
+                    <circle cx="60" cy="55" r="40" fill="#957964" />
+                </svg>
+                <h1><span>H</span>ANG OUT</h1>
+                <span style="background-color: lightgray" id="underTitle">Hapësira e <abbr title="Autosalloni i Veturave">AV</abbr> për të shiquar video, foto dhe dëgjuar audio.</span>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">—</button>
+                <div class="dropdown-content">
+                    <a href="http://www.facebook.com/share">Facebook</a>
+                    <a href="http://www.tumblr.com/share">Tumblr</a>
+                    <a href="http://web.whatsapp.com">Whatsapp</a>
+                </div>
+            </div>
+            <div class="searchBox right-block">
+                <p>Call Us Now On:xxx xxxxxxx </p>
+                <form method="GET">
+                    <label>
+                        <input type="text" name="text" placeholder="Search our website">
+                    </label>
+                    <input type="submit" name="search" value="SEARCH" style="fill:#380d0d">
+                </form>
+            </div>
+        </div>
+    </header>
+    <div id="navbar">
+        <ul>
+            <li><a href="index.html">HOMEPAGE</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="aboutUs.html">ABOUT US</a></li>
+            <li><a href="contactUs.html">CONTACT US</a></li>
+            <li><a href="hangOut.html">HANG OUT</a></li>
+            <li><a href="#">PORTFOLIO</a></li>
+            <li><a href="#">A LINK TEXT</a></li>
+        </ul>
+    </div>
+    <div class="container1">
+        <div draggable="true" class="box">LET'S</div>
+        <div draggable="true" class="box">HANG</div>
+        <div draggable="true" class="box">OUT</div>
+        <div draggable="true" class="box">TOGETHER</div>
+    </div>
+    <footer>
+        <canvas id = "newCanvas1" width = "1000" height = "50"></canvas>
+        <script>
+            var c = document.getElementById('newCanvas1');
+            var ctx = c.getContext('2d');
+            var grd = ctx.createLinearGradient(0, 0, 1000, 50);
+            grd.addColorStop(1, "#957964");
+            grd.addColorStop(0, "#380d0d");
+            ctx.fillStyle = grd;
+            ctx.fillRect(0,0,1000,50);
+        </script>
+        <div><br>
+            Copyright &COPY; -2020 All Right Reserved
+            <span>Template by OS Template</span>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
