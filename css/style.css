@@ -83,7 +83,7 @@
     color: gray;
 }
 #underTitle{
-    color: gray;
+    color: #3c2520;
 }
 header{
     font-family: "serif";
@@ -334,6 +334,7 @@ header{
     height: 5px;
     width: 160px;
     background-color: lightgray;
+    border: 1px solid gray;
 }
  #about-us-block-1 {
     width: 300px;
@@ -414,6 +415,10 @@ header{
 
  #about-us-block-3 input[type=submit]:hover{
      background-color:#f12024;
+ }
+ #email-span a{
+     text-decoration: none;
+     color: #957964;
  }
 
 footer{

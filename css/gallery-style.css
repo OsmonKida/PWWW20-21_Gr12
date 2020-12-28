@@ -122,6 +122,10 @@ footer span {
 header{
     font-family: "serif";
 }
+#underTitle{
+    color: #3C2520;
+    margin-right: 82px;
+}
 .right-block input[type=submit] {
     background-color: #3c2520;
     color: white;
