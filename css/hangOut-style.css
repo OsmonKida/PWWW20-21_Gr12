@@ -38,7 +38,7 @@ svg{
     z-index: -1;
 }
 .box.over {
-    border: 3px dotted #666;
+    border: 3px dotted #380d0d;
 }
 
 .gallery img {
