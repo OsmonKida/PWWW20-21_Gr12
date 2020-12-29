@@ -344,4 +344,8 @@ header{
 #this:hover{
     background-image:linear-gradient(#957964,#957964);
 }
+.dark-mode{
+    background-color: black;
+    color: white;
+}
   

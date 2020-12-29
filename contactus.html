@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/contactUs-style.css">
     <title>CONTACT US</title>
+    <style>
+        #email{
+            margin: 250px 0 0 50px;
+            border: 1px solid #380d0d;
+            width: 250px;
+            background-image: url("images/clipart.png");
+            background-attachment: fixed;
+            background-position: left;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -36,7 +47,7 @@
                     </div>
                 </div>
                 <div class="searchBox right-block">
-                       <p>Call Us Now On:xxx xxxxxxx </p>
+                    <p>Thirrni tani n&#235:(+383)044/049 222-333</p>
                        <form method="GET">
                           <label>
                              <input type="text" name="text" placeholder="Search our website" autocomplete="on">
@@ -56,6 +67,20 @@
                 <li><a href="#"><span onclick="getLocation()">GET LOC.</span></a></li>
                 <li><a href="#"><span onclick="myFunction()">DARK MODE</span></a></li>
             </ul>
+        </div>
+        <div id="email">
+            <form action="mailto:someone@example.com" method="post" enctype="text/plain">
+                Emri:<br>
+                <input type="text" name="name"><br>
+                E-mail:<br>
+                <input type="text" name="mail"><br>
+                Password:<br>
+                <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
+                Mesazhi:<br>
+                <input type="text" name="comment" size="30"><br><br>
+                <input type="submit" value="Dergo">
+                <input type="reset" value="Reset">
+            </form>
         </div>
         <script>
             function myFunction() {
@@ -87,7 +112,7 @@
         </script>
         <footer>
             <div><br>
-                Copyright &COPY; -2020 All Right Reserved
+                Copyright &#169 -2020 All Right Reserved
                 <span>Template by OS Template</span>
             </div>
         </footer>
