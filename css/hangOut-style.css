@@ -6,12 +6,12 @@ header{
     height: 50px;
     text-align: center;
 }
-header h1 span{
+#h{
     font-size: 3.2rem;
-    color: rgba(0,0,0,0.82);
+    /*color: rgba(0,0,0,0.82);*/
 }
 h1{
-    color: rgba(0,0,0,0.82);
+    /*color: rgba(0,0,0,0.82);*/
 }
 .container1 {
     display: grid;
@@ -160,9 +160,14 @@ header{
     background-color: #957964;
     font-family: inherit;
     margin-right: 1.28rem;
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    -webkit-transition: transform 1s ease 0s;
 }
 .dropdown:hover .dropbtn {
     background-color: #f12024;
+    -webkit-transform: perspective(3000px) rotateX(30deg);
+    display: inline-grid;
 }
 .dropdown-content {
     display: none;
@@ -216,6 +221,17 @@ header{
 #navbar ul li a:hover{
     background-color:#957964;
 }
+#this{
+    background-image: linear-gradient(#957964,#3c2520);
+
+}
+#this:hover{
+    background-image:linear-gradient(#957964,#957964);
+}
+#out{
+    -webkit-transform: rotate(-20deg);
+    display: inline-block;
+}
 #navbar ul li:first-child a {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -224,6 +240,14 @@ header{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     padding-right: 30px;
+}
+@font-face {
+    font-family: "myFont";
+    src: local("C:/Users/Smart-ON/OneDrive/Documents/GitHub/PWWW20-21_Gr12/font/SansationLight.ttf");
+}
+#result, #statRes{
+    text-align: center;
+    font-family: "myFont",sans-serif;
 }
 #newCanvas{
     z-index: -1;
@@ -234,4 +258,13 @@ header{
     z-index: -1;
     position: absolute;
     margin-left: -18px;
+}
+.dark-mode{
+    background-color: black;
+    color: white;
+
+}
+#stats{
+    alignment: center;
+    margin-left: 450px;
 }

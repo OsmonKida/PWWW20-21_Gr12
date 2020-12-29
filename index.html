@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="/index.appcache">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,24 +44,52 @@
                     <p>Call Us Now On:xxx xxxxxxx </p>
                     <form method="GET">
                         <label>
-                            <input type="text" name="text" placeholder="Search our website">
+                            <input type="text" name="text" placeholder="Search our website" autocomplete="on">
                         </label>
-                        <input type="submit" name="search" value="SEARCH" style="fill:#380d0d">
+                        <input type="submit" name="search" value="SEARCH" style="fill:#380d0d" autocomplete="on">
                     </form>
                 </div>
             </div>
         </header>
         <div id="navbar">
             <ul>
-                <li><a href="index.html">HOMEPAGE</a></li>
+                <li><a href="index.html" id="this">HOMEPAGE</a></li>
                 <li><a href="gallery.html">GALLERY</a></li>
                 <li><a href="aboutUs.html">ABOUT US</a></li>
                 <li><a href="contactUs.html">CONTACT US</a></li>
                 <li><a href="hangOut.html">HANG OUT</a></li>
-                <li><a href="#">PORTFOLIO</a></li>
-                <li><a href="#">A LINK TEXT</a></li>
+                <li><a href="#"><span onclick="getLocation()">GET LOC.</span></a></li>
+                <li><a href="#"><span onclick="myFunction()">DARK MODE</span></a></li>
              </ul>      
         </div>
+        <script>
+            function myFunction() {
+                var element = document.body;
+                var d = new Date();
+                var n = d.getHours();
+                if ((n>=18&&n<=23)||n>=0&&n<=7)
+                    element.classList.toggle("dark-mode");
+            }
+
+            var x = document.getElementById("loc");
+
+            function getLocation() {
+                try{
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                    } else {
+                        window.alert("Geolocation nuk suportohet nga ky browser!")
+                    }
+                } catch (err) {
+                    err.message
+                }
+            }
+
+            function showPosition(position) {
+                window.alert("Latitude: "+position.coords.latitude +
+                    "; Longitude: " + position.coords.longitude+";");
+            }
+        </script>
 
         <div id="main-text">
             <font size="6"><span>CURCUS PENATI SACCUM UT CURABITUR NULLA</span></font><br><br>
@@ -167,10 +195,10 @@
                 <font size = "4"><strong>NEWSLETTER</strong></font> <br><br>
                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae amet </span><br><br>
                 <form action="" method="POST">
-                    <input type="text" name="name" placeholder="Name" size="37"> <br><br>
-                    <input type="email" name="email" placeholder="Email" size="37"> <br><br>
+                    <input type="text" name="name" placeholder="Name" size="37" autocomplete="on"> <br><br>
+                    <input type="email" name="email" placeholder="Email" size="37" autocomplete="on"> <br><br>
 
-                    <input type="submit" value="SUBMIT" name="submit" > <br><br>
+                    <input type="submit" value="SUBMIT" name="submit" pattern="[A-Za-z]{3}" autocomplete="on"> <br><br>
                     <font size = "4"><strong>Contact us</strong></font> <br><br>
                     <address>
                     <span><u>Tel</u>: (+383)044/049 222-333</span> <br>

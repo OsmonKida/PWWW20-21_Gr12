@@ -128,11 +128,16 @@ header{
     /* Te rendesishme per radhitje vertikale ne smartphone (font-family dhe margin-right).*/
     font-family: inherit;
     margin-right: 1.28rem;
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    -webkit-transition: transform 1s ease 0s;
 }
 
 /* Shto ngjyren e kuqe kur gjendemi me maus mbi buton */
 .dropdown:hover .dropbtn {
     background-color: #f12024;
+    -webkit-transform: perspective(3000px) rotateX(30deg);
+    display: inline-grid;
 }
 
 /* Permbajtja e butonit (by-default eshte e fshehur) */
@@ -426,4 +431,11 @@ footer{
     color: #957964;
     background-color: #3c2520;
     height: 50px;
+}
+#this{
+    background-image: linear-gradient(#957964,#3c2520);
+
+}
+#this:hover{
+    background-image:linear-gradient(#957964,#957964);
 }

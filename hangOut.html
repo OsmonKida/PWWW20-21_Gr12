@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="/hangout.appcache">
 <head>
     <meta charset="UTF-8">
     <meta name="view-hangOut" content="width=device-width, initial-scale=1.0">
@@ -7,60 +7,7 @@
           type = "text/css"
           href = "css/hangOut-style.css" />
     <title>Hang Out</title>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-
-            function handleDragStart(e) {
-                this.style.opacity = '0.4';
-                dragSrcEl = this;
-
-                e.dataTransfer.effectAllowed = 'move';
-                e.dataTransfer.setData('text/html', this.innerHTML);
-            }
-
-            function handleDragEnd(e) {
-                this.style.opacity = '1';
-
-                items.forEach(function (item) {
-                    item.classList.remove('over');
-                });
-            }
-
-            function handleDragOver(e) {
-                if (e.preventDefault) {
-                    e.preventDefault();
-                }
-
-                return false;
-            }
-
-            function handleDragEnter(e) {
-                this.classList.add('over');
-            }
-
-            function handleDragLeave(e) {
-                this.classList.remove('over');
-            }
-            function handleDrop(e) {
-                e.stopPropagation(); // stops the browser from redirecting.
-                if (dragSrcEl !== this) {
-                    dragSrcEl.innerHTML = this.innerHTML;
-                    this.innerHTML = e.dataTransfer.getData('text/html');
-                }
-                return false;
-            }
-
-            let items = document.querySelectorAll('.container .box');
-            items.forEach(function(item) {
-                item.addEventListener('dragstart', handleDragStart, false);
-                item.addEventListener('dragover', handleDragOver, false);
-                item.addEventListener('dragenter', handleDragEnter, false);
-                item.addEventListener('dragleave', handleDragLeave, false);
-                item.addEventListener('dragend', handleDragEnd, false);
-                item.addEventListener('drop', handleDrop, false);
-            });
-        });
-    </script>
+    <script src="javascript/hangOut.js"></script>
 </head>
 <body>
 <div class = "container">
@@ -93,7 +40,7 @@
                 <svg height="100" width="100">
                     <circle cx="60" cy="55" r="40" fill="#957964" />
                 </svg>
-                <h1><span>H</span>ANG OUT</h1>
+                <h1><span id="h">H</span>ANG <span id="out">OUT</span></h1>
                 <span style="background-color: lightgray" id="underTitle">Hapësira e <abbr title="Autosalloni i Veturave">AV</abbr> për të shiquar video, foto dhe dëgjuar audio.</span>
             </div>
             <div class="dropdown">
@@ -108,9 +55,9 @@
                 <p>Call Us Now On:xxx xxxxxxx </p>
                 <form method="GET">
                     <label>
-                        <input type="text" name="text" placeholder="Search our website">
+                        <input type="text" name="text" placeholder="Search our website" autocomplete="on">
                     </label>
-                    <input type="submit" name="search" value="SEARCH" style="fill:#380d0d">
+                    <input type="submit" name="search" value="SEARCH" style="fill:#380d0d" autocomplete="on">
                 </form>
             </div>
         </div>
@@ -121,9 +68,9 @@
             <li><a href="gallery.html">GALLERY</a></li>
             <li><a href="aboutUs.html">ABOUT US</a></li>
             <li><a href="contactUs.html">CONTACT US</a></li>
-            <li><a href="hangOut.html">HANG OUT</a></li>
-            <li><a href="#">PORTFOLIO</a></li>
-            <li><a href="#">A LINK TEXT</a></li>
+            <li><a href="hangOut.html" id="this">HANG OUT</a></li>
+            <li><a href="#"><span onclick="getLocation()">GET LOC.</span></a></li>
+            <li><a href="#"><span onclick="myFunction()">DARK MODE</span></a></li>
         </ul>
     </div>
     <div class="container1">
@@ -132,6 +79,119 @@
         <div draggable="true" class="box">OUT</div>
         <div draggable="true" class="box">TOGETHER</div>
     </div>
+    <hr>
+    <div style="margin: 10px 0 10px 0; text-align: center">
+        <button onclick="playPause()">Play/Pause</button>
+        <button onclick="makeBig()">Big</button>
+        <button onclick="makeSmall()">Small</button>
+        <button onclick="makeNormal()">Normal</button>
+        <br>
+        <video controls id="video1" width="560" style="margin: 10px 0 10px 0">
+            <source src="videos/Sharper%20than%20ever.%20The%20new%20BMW%20M5..mp4" type="video/mp4">
+            Shfletuesi juaj nuk e suporton kete veti te HTML.
+        </video>
+        <br>
+        <button onclick="playPause2()">Play/Pause</button>
+        <button onclick="makeBig2()">Big</button>
+        <button onclick="makeSmall2()">Small</button>
+        <button onclick="makeNormal2()">Normal</button>
+        <br>
+        <video controls id="video2" width="560" style="margin: 10px 0 10px 0">
+            <source src="videos/BRABUS%20G%20WAGON.mp4" type="video/mp4">
+            Shfletuesi juaj nuk e suporton kete veti te HTML.
+        </video>
+        <br>
+        <audio controls>
+            <source src="audio/2018%20BMW%20M5%20F90%20(600hp)%20-%20pure%20SOUND!.mp3" type="audio/mpeg">
+            Shfletuesi juaj nuk e suporton kete veti te HTML.
+        </audio>
+        <br>
+        <audio controls>
+            <source src="audio/bmw2.mp3" type="audio/mpeg">
+            Shfletuesi juaj nuk e suporton kete veti te HTML.
+        </audio>
+    </div>
+    <hr>
+    <button id="stats" onclick="getStats()">Get Stats</button>
+    <div id="statRes"></div>
+    <hr>
+    <div id="result"></div>
+    <script>
+        var myVideo = document.getElementById("video1");
+        var myOtherVideo = document.getElementById("video2");
+
+        function playPause() {
+            if (myVideo.paused)
+                myVideo.play();
+            else
+                myVideo.pause();
+        }
+
+        function playPause2() {
+            if (myOtherVideo.paused)
+                myOtherVideo.play();
+            else
+                myOtherVideo.pause();
+        }
+
+        function makeBig() {
+            myVideo.width = 900;
+        }
+        function makeBig2() {
+            myOtherVideo.width = 900;
+        }
+
+        function makeSmall() {
+            myVideo.width = 420;
+        }
+        function makeSmall2() {
+            myOtherVideo.width = 420;
+        }
+
+        function makeNormal() {
+            myVideo.width = 560;
+        }
+        function makeNormal2() {
+            myOtherVideo.width = 560;
+        }
+
+        if (typeof(Storage) !== "undefined") {
+            // Store
+            localStorage.setItem("lastname", "Krasniqi-Kida-Ajvazi");
+            // Retrieve
+            document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+        } else {
+            document.getElementById("result").innerHTML = "Fatkeqesisht, shfletuesi juaj nuk e suporton Web Storage...";
+        }
+
+        function myFunction() {
+            var element = document.body;
+            var d = new Date();
+            var n = d.getHours();
+            if ((n>=16&&n<=23)||n>=0&&n<=7) {
+                element.classList.toggle("dark-mode");
+            }
+        }
+
+        var x = document.getElementById("loc");
+
+        function getLocation() {
+            try{
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    window.alert("Geolocation nuk suportohet nga ky browser!")
+                }
+            } catch (err) {
+                err.message
+            }
+        }
+
+        function showPosition(position) {
+            window.alert("Latitude: "+position.coords.latitude +
+                "; Longitude: " + position.coords.longitude+";");
+        }
+    </script>
     <footer>
         <canvas id = "newCanvas1" width = "1000" height = "50"></canvas>
         <script>

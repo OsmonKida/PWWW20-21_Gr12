@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="/contactus.appcache">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,9 +39,9 @@
                        <p>Call Us Now On:xxx xxxxxxx </p>
                        <form method="GET">
                           <label>
-                             <input type="text" name="text" placeholder="Search our website">
+                             <input type="text" name="text" placeholder="Search our website" autocomplete="on">
                           </label>
-                         <input type="submit" name="search" value="SEARCH" style="fill:#380d0d">
+                         <input type="submit" name="search" value="SEARCH" style="fill:#380d0d" autocomplete="on">
                         </form>
                 </div>
             </div>
@@ -51,12 +51,40 @@
                 <li><a href="index.html">HOMEPAGE</a></li>
                 <li><a href="gallery.html">GALLERY</a></li>
                 <li><a href="aboutus.html">ABOUT US</a></li>
-                <li><a href="contactus.html">CONTACT US</a></li>
+                <li><a href="contactus.html" id="this">CONTACT US</a></li>
                 <li><a href="hangOut.html">HANG OUT</a></li>
-                <li><a href="#">PORTFOLIO</a></li>
-                <li><a href="#">A LINK TEXT</a></li>
+                <li><a href="#"><span onclick="getLocation()">GET LOC.</span></a></li>
+                <li><a href="#"><span onclick="myFunction()">DARK MODE</span></a></li>
             </ul>
         </div>
+        <script>
+            function myFunction() {
+                var element = document.body;
+                var d = new Date();
+                var n = d.getHours();
+                if ((n>=18&&n<=23)||n>=0&&n<=7)
+                    element.classList.toggle("dark-mode");
+            }
+
+            var x = document.getElementById("loc");
+
+            function getLocation() {
+                try{
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                    } else {
+                        window.alert("Geolocation nuk suportohet nga ky browser!")
+                    }
+                } catch (err) {
+                    err.message
+                }
+            }
+
+            function showPosition(position) {
+                window.alert("Latitude: "+position.coords.latitude +
+                    "; Longitude: " + position.coords.longitude+";");
+            }
+        </script>
         <footer>
             <div><br>
                 Copyright &COPY; -2020 All Right Reserved

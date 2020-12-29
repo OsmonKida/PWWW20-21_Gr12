@@ -152,9 +152,14 @@ header{
     background-color: #957964;
     font-family: inherit;
     margin-right: 1.28rem;
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    -webkit-transition: transform 1s ease 0s;
 }
 .dropdown:hover .dropbtn {
     background-color: #f12024;
+    -webkit-transform: perspective(3000px) rotateX(30deg);
+    display: inline-grid;
 }
 .dropdown-content {
     display: none;
@@ -216,4 +221,11 @@ header{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     padding-right: 30px;
+}
+#this{
+    background-image: linear-gradient(#957964,#3c2520);
+
+}
+#this:hover{
+    background-image:linear-gradient(#957964,#957964);
 }
