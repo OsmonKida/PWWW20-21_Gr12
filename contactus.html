@@ -7,7 +7,30 @@
     <title>CONTACT US</title>
     <style>
         #email{
-            margin: 250px 0 0 50px;
+            float: left;
+            margin: 10px 0 10px 50px;
+            border: 1px solid #380d0d;
+            width: 250px;
+            background-image: url("images/clipart.png");
+            background-attachment: fixed;
+            background-position: left;
+            text-transform: uppercase;
+        }
+
+        #Email_to_menager{
+            float: left;
+            margin: 10px 0 10px 50px;
+            border: 1px solid #380d0d;
+            width: 250px;
+            background-image: url("images/clipart.png");
+            background-attachment: fixed;
+            background-position: left;
+            text-transform: uppercase;
+        }
+
+        #Email_to_agent{
+            float: left;
+            margin: 10px 0 10px 50px;
             border: 1px solid #380d0d;
             width: 250px;
             background-image: url("images/clipart.png");
@@ -67,16 +90,45 @@
                 <li><a href="#"><span onclick="getLocation()">GET LOC.</span></a></li>
                 <li><a href="#"><span onclick="myFunction()">DARK MODE</span></a></li>
             </ul>
+            
         </div>
         <div id="email">
-            <form action="mailto:someone@example.com" method="post" enctype="text/plain">
+            <form action="mailto:osmankida@gmail.com" method="post" enctype="text/plain">
                 Emri:<br>
                 <input type="text" name="name"><br>
                 E-mail:<br>
                 <input type="text" name="mail"><br>
                 Password:<br>
                 <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
-                Mesazhi:<br>
+                Mesazhi për porosi:<br>
+                <input type="text" name="comment" size="30"><br><br>
+                <input type="submit" value="Dergo">
+                <input type="reset" value="Reset">
+            </form>
+        </div>
+        <div id="Email_to_menager">
+            <form action="mailto:valdrinajvazi@hotmail.com" method="post" enctype="text/plain">
+                Emri:<br>
+                <input type="text" name="name"><br>
+                E-mail:<br>
+                <input type="text" name="mail"><br>
+                Password:<br>
+                <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
+                Mesazhi për Menaxherin:<br>
+                <input type="text" name="comment" size="30"><br><br>
+                <input type="submit" value="Dergo">
+                <input type="reset" value="Reset">
+            </form>
+        </div>
+        <div id="Email_to_agent">
+            <form action="mailto:geti2013@gmail.com" method="post" enctype="text/plain">
+                Emri:<br>
+                <input type="text" name="name"><br>
+                E-mail:<br>
+                <input type="text" name="mail"><br>
+                Password:<br>
+                <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
+                Mesazhi për agjentin:<br>
                 <input type="text" name="comment" size="30"><br><br>
                 <input type="submit" value="Dergo">
                 <input type="reset" value="Reset">
@@ -118,6 +170,7 @@
         </footer>
 
     </div>
+    
     <script src="javascript/script.js"></script>
 </body>
 </html>
