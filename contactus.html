@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" manifest="/contactus.appcache">
+<html lang="en" manifest="/contactUs.appcache">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,7 +59,7 @@
             </div>
             <div id="header2">
                 <div class="title left-block">
-                    <h1><span>C</span>ONTACT <span>U</span>S</h1>
+                    <span>C</span>ONTACT <span>U</span>S
                 </div>
                 <div class="dropdown">
                     <button class="dropbtn">—</button>
@@ -96,13 +96,36 @@
             <form action="mailto:osmankida@gmail.com" method="post" enctype="text/plain">
                 Emri:<br>
                 <input type="text" name="name"><br>
-                E-mail:<br>
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Makine">
+                <label for="vehicle1"> BMW</label><br>
+                <input type="checkbox" id="vehicle2" name="vehicle2" value="Makine">
+                <label for="vehicle2"> AUDI</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Makine">
+                <label for="vehicle3"> Mercedes</label><br>
+                <input type="checkbox" id="vehicle4" name="vehicle4" value="Makine">
+                <label for="vehicle3"> VW</label><br>
+                <input type="checkbox" id="vehicle5" name="vehicle5" value="Makine">
+                <label for="vehicle3"> Chevrolet</label><br>
+                <input type="checkbox" id="vehicle6" name="vehicle6" value="Makine">
+                <label for="vehicle3"> Ford</label><br></br>
+                <label for="vendi">Ku d&#235shironi t&#235 d&#235rgohet porosia:</label>
+                <input list="vendet" name="browser" id="vendi">
+                <datalist id="vendet">
+                    <option value="Prishtin&#235">
+                    <option value="Mitrovic&#235">
+                    <option value="Pej&#235">
+                    <option value="Prizren">
+                    <option value="Ferizaj">
+                    <option value="Gjilan">
+                    <option value="Gjakov&#235">
+                </datalist>
+                <br></br>E-mail:<br>
                 <input type="text" name="mail"><br>
                 Password:<br>
                 <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
                 Mesazhi për porosi:<br>
                 <input type="text" name="comment" size="30"><br><br>
-                <input type="submit" value="Dergo">
+                <input type="submit" value="D&#235rgo">
                 <input type="reset" value="Reset">
             </form>
         </div>
@@ -110,13 +133,20 @@
             <form action="mailto:valdrinajvazi@hotmail.com" method="post" enctype="text/plain">
                 Emri:<br>
                 <input type="text" name="name"><br>
-                E-mail:<br>
+                gjinia:<br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Mashkull</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">fem&#235r</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">tjet&#235r</label>
+                <br></br>E-mail:<br>
                 <input type="text" name="mail"><br>
                 Password:<br>
                 <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
                 Mesazhi për Menaxherin:<br>
                 <input type="text" name="comment" size="30"><br><br>
-                <input type="submit" value="Dergo">
+                <input type="submit" value="D&#235rgo">
                 <input type="reset" value="Reset">
             </form>
         </div>
@@ -124,13 +154,20 @@
             <form action="mailto:geti2013@gmail.com" method="post" enctype="text/plain">
                 Emri:<br>
                 <input type="text" name="name"><br>
-                E-mail:<br>
+                gjinia:<br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Mashkull</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">fem&#235r</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">tjet&#235r</label>
+                <br></br>E-mail:<br>
                 <input type="text" name="mail"><br>
                 Password:<br>
                 <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
                 Mesazhi për agjentin:<br>
                 <input type="text" name="comment" size="30"><br><br>
-                <input type="submit" value="Dergo">
+                <input type="submit" value="D&#235rgo">
                 <input type="reset" value="Reset">
             </form>
         </div>

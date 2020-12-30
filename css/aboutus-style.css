@@ -112,8 +112,15 @@ footer span {
     margin-top: 20px;
     z-index: -1;
 }
-.left-block h1{
-    color: rgba(0,0,0,0.82);
+.left-block span{
+    margin: 50px 0 0 10px;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+.title{
+    margin: 50px 0 0 10px;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 .right-block p{
     text-align: right;

@@ -228,16 +228,18 @@ header{
     height: 450px;
     float: left;
     clear: both;
-    margin-top: 5px;
-    background-color: rgb(56, 56, 56);
+    text-align: center;
+    margin-top: 35px;
+    /*background-color: rgb(56, 56, 56);*/
     margin-left: 20px;
 }
 
 .small-box {
     width: 372px;
     height: 152px;
-    background-color: rgb(56, 56, 56) ;
+    /*background-color: rgb(56, 56, 56) ;*/
     float: left;
+    text-align: center;
     margin-left: 30px;
     margin-top: 1px;
 }
