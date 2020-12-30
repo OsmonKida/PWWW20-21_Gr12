@@ -266,4 +266,18 @@ header{
 #stats{
     alignment: center;
     margin-left: 450px;
+    color: white;
+    background-color: #957964;
+}
+
+#loja {
+    float: left;
+    margin: 10px 0 0 450px;
+    background-color: #957964;
+}
+
+#loja a{
+    text-decoration: none ;
+    color: white;
+    
 }

@@ -241,4 +241,8 @@ header{
     color: white;
 }
 
-
+svg{
+    position: absolute;
+    z-index: -1;
+    
+}
