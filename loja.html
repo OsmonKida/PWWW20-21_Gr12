@@ -1,75 +1,136 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<style>
-canvas {
-    border:1px solid #d3d3d3;
-    background-color: #f1f1f1;
-}
-</style>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+
+        .collideme {
+            height: 20px;
+            width: 20px;
+            display: inline-block;
+            background-color: blue;
+            position: absolute;
+        }
+
+        #divone {
+            background-color: blue;
+            left: 0;
+            top: 0;
+        }
+
+        #divtwo {
+            background-color: red;
+            left: 50px;
+            top: 50px;
+        }
+
+        .collision-state {
+            background-color: green !important;
+        }
+    </style>
+
 </head>
-<body onload="startGame()">
+<body>
+<div class='container' id='divboard'>
+    <div class='collideme' data-dynamic='false'></div>
+    <div class='collideme' data-dynamic='true' id='divtwo'></div>
+</div>
 <script>
+    const collider = {
+        moveableDiv: null,
+        staticDivs: [],
+        checkCollision: function() {
+            let hasJustCollided = false;
+            for (let i = 0; i < this.staticDivs.length; i++) {
+                const currentDiv = this.staticDivs[i];
+                if (currentDiv.position.left < this.moveableDiv.position.left + this.moveableDiv.position.width &&
+                    currentDiv.position.left + currentDiv.position.width > this.moveableDiv.position.left &&
+                    currentDiv.position.top < this.moveableDiv.position.top + this.moveableDiv.position.height &&
+                    currentDiv.position.height + currentDiv.position.top > this.moveableDiv.position.top) {
+                    hasJustCollided = true;
+                    if (!this.moveableDiv.ref.classList.contains('collision-state')) {
+                        this.moveableDiv.ref.classList.add('collision-state');
+                        window.alert("Dy objektet jane ndeshur!");
+                    }
+                } else if (this.moveableDiv.ref.classList.contains('collision-state') && !hasJustCollided) {
+                    this.moveableDiv.ref.classList.remove('collision-state');
+                }
+            }
+        },
 
-var myGamePiece;
+    };
 
-function startGame() {
-    myGameArea.start();
-    myGamePiece = new component(30, 30, "red", 10, 120);
-}
-
-var myGameArea = {
-    canvas : document.createElement("canvas"),
-    start : function() {
-        this.canvas.width = 480;
-        this.canvas.height = 270;
-        this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-        this.interval = setInterval(updateGameArea, 20);
-        window.addEventListener('keydown', function (e) {
-            myGameArea.key = e.keyCode;
-        })
-        window.addEventListener('keyup', function (e) {
-            myGameArea.key = false;
-        })
-    }, 
-    clear : function(){
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    class BaseDiv {
+        constructor(position) {
+            this.position = position;
+        }
     }
-}
 
-function component(width, height, color, x, y) {
-    this.gamearea = myGameArea;
-    this.width = width;
-    this.height = height;
-    this.speedX = 0;
-    this.speedY = 0;    
-    this.x = x;
-    this.y = y;    
-    this.update = function() {
-        ctx = myGameArea.context;
-        ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+    class MoveDiv extends BaseDiv {
+        constructor(position, ref) {
+            super(position);
+            this.ref = ref;
+        }
+        shiftPosition(x, y) {
+            this.position.left += x;
+            this.position.top += y;
+            this.reDraw();
+        }
+        reDraw() {
+            this.ref.setAttribute('style', `left: ${this.position.left}px; top: ${this.position.top}px`);
+            collider.checkCollision();
+        }
     }
-    this.newPos = function() {
-        this.x += this.speedX;
-        this.y += this.speedY;        
-    }
-}
 
-function updateGameArea() {
-    myGameArea.clear();
-    myGamePiece.speedX = 0;
-    myGamePiece.speedY = 0;    
-    if (myGameArea.key && myGameArea.key == 37) {myGamePiece.speedX = -1; }
-    if (myGameArea.key && myGameArea.key == 39) {myGamePiece.speedX = 1; }
-    if (myGameArea.key && myGameArea.key == 38) {myGamePiece.speedY = -1; }
-    if (myGameArea.key && myGameArea.key == 40) {myGamePiece.speedY = 1; }
-    myGamePiece.newPos();    
-    myGamePiece.update();
-}
+    function moveDiv(e) {
+        switch(e.which) {
+            case 37:
+                collider.moveableDiv.shiftPosition(-5, 0);
+                break;
+            case 38:
+                collider.moveableDiv.shiftPosition(0, -5);
+                break;
+            case 39:
+                collider.moveableDiv.shiftPosition(5, 0);
+                break;
+            case 40:
+                collider.moveableDiv.shiftPosition(0, 5);
+                break;
+            default:
+                console.log('not an arrow');
+                break;
+        }
+    }
+
+    function positionCreator(currentDiv) {
+        return {
+            left: currentDiv.getBoundingClientRect().left,
+            top: currentDiv.getBoundingClientRect().top,
+            height: currentDiv.getBoundingClientRect().height,
+            width: currentDiv.getBoundingClientRect().width
+        };
+    }
+
+
+    (() => {
+        const allTheDivs = document.querySelectorAll('.collideme');
+        for (let i = 0; i < allTheDivs.length; i++) {
+            const currentDiv = allTheDivs[i];
+            if (currentDiv.dataset.dynamic === 'true') {
+                currentDiv.setAttribute('style', 'left: 500px; top: 300px;');
+                const moveableDiv = new MoveDiv(positionCreator(currentDiv), currentDiv);
+                collider.moveableDiv = moveableDiv;
+            } else {
+                currentDiv.setAttribute('style', `left: ${Math.floor(Math.random() * 400)}px; top: ${Math.floor(Math.random() * 600)}px;`);
+                const staticDiv = new BaseDiv(positionCreator(currentDiv));
+                collider.staticDivs.push(staticDiv);
+            }
+        }
+        document.addEventListener('keydown', (e) => moveDiv(e));
+    })();
 </script>
-<p>Kjo është loja që vë në funksion GameButton të HTML5</p>
 </body>
 </html>

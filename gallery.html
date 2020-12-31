@@ -89,44 +89,100 @@
     <div class="slideshow-container">
         <div class="mySlides fade">
           <div class="numberText">1/7</div>
-          <img src="images/bmw-m5.jpg" style="width:100%">
-          <div class="text">BMW M5 2020</div>
+          <img src="images/audi-rs7.jpg" style="width:100%">
+          <div class="text">Audi rs7</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numberText">2/7</div>
-            <img src="images/audi-rs7.jpg" style="width:100%">
-            <div class="text">AUDI RS7 2020</div>
+            <img src="images/2020-audi-q7.jpg" style="width:100%">
+            <div class="text">AUDI Q7</div>
         </div>
       
         <div class="mySlides fade">
           <div class="numberText">3/7</div>
-          <img src="images/bmw-z4m.jpg" style="width:100%">
-          <div class="text">BMW Z4M 2020</div>
+          <img src="images/2020-audi-q4-etron.jpg" style="width:100%">
+          <div class="text">AUDI Q4</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numberText">4/7</div>
-            <img src="images/bmw-x7.jpg" style="width:100%">
-            <div class="text">BMW X7 2020</div>
+            <img src="images/2020-audi-rs6-avant.jpg" style="width:100%">
+            <div class="text">AUDI RS6</div>
          </div>
         
         <div class="mySlides fade">
             <div class="numberText">5/7</div>
-            <img src="images/brabus-gclass.jpg" style="width:100%">
-            <div class="text">BRABUS G-CLASS 2020</div>
+            <img src="images/bmw-8series-grandcoupe.jpg" style="width:100%">
+            <div class="text">BMW 8 Series</div>
          </div>
 
         <div class="mySlides fade">
             <div class="numberText">6/7</div>
-            <img src="images/mustang-gt500.jpg" style="width:100%">
-            <div class="text">MUSTANG GT-500</div>
+            <img src="images/bmw-750li.jpg" style="width:100%">
+            <div class="text">BMW 750Li</div>
         </div>
         
         <div class="mySlides fade">
             <div class="numberText">7/7</div>
+            <img src="images/bmw-m5.jpg" style="width:100%">
+            <div class="text"> BMW M5 </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numberText">7/7</div>
+            <img src="images/bmw-x7.jpg" style="width:100%">
+            <div class="text"> BMW X7 </div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numberText">7/7</div>
+            <img src="images/bmw-z4m.jpg" style="width:100%">
+            <div class="text"> BMW Z4M </div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numberText">7/7</div>
+            <img src="images/corvette-c6.jpg" style="width:100%">
+            <div class="text"> C6 Corvette</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numberText">7/7</div>
+            <img src="images/golf-viii.jpg" style="width:100%">
+            <div class="text"> Golf 2020</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numberText">7/7</div>
+            <img src="images/mustang-gt500.jpg" style="width:100%">
+            <div class="text"> Ford Mustang GT</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numberText">7/7</div>
+            <img src="images/mercedes-benz-sclass.jpg" style="width:100%">
+            <div class="text"> Mercedes-Benz S class</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numberText">7/7</div>
+            <img src="images/2020-Mercedes-Benz-GLE.jpg" style="width:100%">
+            <div class="text"> Mercedes Benz GLE 2020</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numberText">7/7</div>
             <img src="images/mercedes-amg-gt-black-series.jpg" style="width:100%">
-            <div class="text">MERCEDES AMG-GT 2020</div>
+            <div class="text"> Mercedes AMG-GT</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numberText">7/7</div>
+            <img src="images/2020_mercedes-benz_cla_coupe.jpg" style="width:100%">
+            <div class="text"> Mercedes Benz CLA 2020</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numberText">7/7</div>
+            <img src="images/2020-mercedes-benz-gls.jpg" style="width:100%">
+            <div class="text"> Mercedes Benz GLS</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numberText">7/7</div>
+            <img src="images/brabus-gclass.jpg" style="width:100%">
+            <div class="text"> BRABUS G Class</div>
         </div>
 
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -300,6 +356,29 @@
         </div>
     </footer>
 </div>
-<script src="javascript/script.js"></script>
+<script>
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+
+</script>
 </body>
 </html>

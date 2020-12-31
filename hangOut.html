@@ -213,13 +213,15 @@
         }
         
     </script>
-
+    <div class="animacioni">
+        <div class="content"><img src="images/small-car.png" width = "100" alt="small"></div>
+    </div>
     <footer>
         <canvas id = "newCanvas1" width = "1000" height = "50"></canvas>
         <script>
             var c = document.getElementById('newCanvas1');
             var ctx = c.getContext('2d');
-            var grd = ctx.createLinearGradient(0, 0, 1000, 50);
+            var grd = ctx.createRadialGradient(500, 25, 10, 500, 25, 50);
             grd.addColorStop(1, "#957964");
             grd.addColorStop(0, "#380d0d");
             ctx.fillStyle = grd;

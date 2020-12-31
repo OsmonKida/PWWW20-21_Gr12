@@ -32,6 +32,7 @@ h1{
     text-align: center;
     font-size: xxx-large;
     margin-left: 50px;
+    text-shadow: 2px 2px #ff0000;
 }
 svg{
     position: absolute;
@@ -280,4 +281,24 @@ header{
     text-decoration: none ;
     color: white;
     
+}
+
+
+.animacioni{
+    width: 950px;
+    background-color:#ddd; padding: 25px;
+    float: left;
+}
+
+.content{
+    animation: move 5s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        transform:translate(0)
+    }
+    50% {
+        transform: translate(850px);
+    }
 }
