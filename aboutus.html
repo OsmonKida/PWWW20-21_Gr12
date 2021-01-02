@@ -104,7 +104,7 @@
                     <div class="container1">
                       <h2>Getoar Krasniqi</h2>
                       <p class="title">Agjentë i shitjes</p>
-                      <p>Unë jamë Getoari, nëse keni nevojë për ndonjë ndihmë mos hezitoni të më kontaktoni</p>
+                      <p>Unë jam <span id="name1"></span>, nëse keni nevojë për ndonjë ndihmë mos hezitoni të më kontaktoni</p>
                       <p>geti2013@gmail.com</p>
                       <p><button class="button"><a href="contactus.html">Contact</a></button>
                     </p>
@@ -118,7 +118,7 @@
                     <div class="container1">
                       <h2>Valdrin Ajvazi</h2>
                       <p class="title">Menaxheri</p>
-                      <p>Unë jamë Valdrini,nëse hasni në ndonjë parregullsi ose mos transparencë nga punëtorët tanë më njoftoni.</p>
+                      <p>Unë jam <span id="name2"></span>, nëse hasni në ndonjë parregullsi ose mos transparencë nga punëtorët tanë më njoftoni.</p>
                       <p>valdrinajvaz@hotmail.com</p>
                       <p><button class="button"><a href="contactUs.html">Contact</a></button></p>
                     </div>
@@ -131,7 +131,7 @@
                     <div class="container1">
                       <h2>Osman Kida</h2>
                       <p class="title">CEO</p>
-                      <p>Unë jamë Kidda, jamë themeluesi i <abbr title="Autosalloni i Veturave">AV</abbr></p>
+                      <p>Unë jam <span id="name3"></span>, jamë themeluesi i <abbr title="Autosalloni i Veturave">AV</abbr></p>
                       <p>osmankida@gmail.com</p>
                       <p><button class="button"><a href="contactUs.html">Contact</a></button></p>
                     </div>
@@ -210,6 +210,9 @@
               </div>
 
         </div>
+        <div class="animacioni">
+          <div class="content"><img src="images/small-car.png" width = "100" alt="small"></div>
+        </div>
         <footer>
             <div><br>
                 Copyright &COPY; -2020 All Right Reserved
@@ -218,6 +221,23 @@
         </footer>
 
     </div>
-    <script src="javascript/script.js"></script>
+    <script>
+      function Person(first, last, age) {
+      this.firstName = first;
+      this.lastName = last;
+      this.age = age;
+       }
+
+       Person.prototype.name = function() {
+            return this.firstName + " " + this.lastName;
+      };
+      var vali = new Person("Valdrin", "Ajvazi", 20);
+      var geti = new Person("Getoar", "Krasniqi", 20);
+      var kida = new Person("Osmon", "Kida", 20);
+      
+      document.getElementById("name1").innerHTML = geti.name() + ". Mosha ime është " + geti.age; 
+      document.getElementById("name2").innerHTML = vali.name() + ". Mosha ime është " + vali.age; 
+      document.getElementById("name3").innerHTML = kida.name() + ". Mosha ime është " + kida.age; 
+    </script>
 </body>
 </html>

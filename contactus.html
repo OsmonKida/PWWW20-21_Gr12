@@ -204,8 +204,8 @@
 
             function checkPassword(formId) 
             { 
-                var regex=  /^[a-zA-Z ]{8,16}$/;
-                var elements2=  document.getElementById(formId).elements;
+                const regex=  /^[a-zA-Z ]{8,16}$/;
+                const elements2=  document.getElementById(formId).elements;
                 var passw = elements2["pwd"].value;
                 if(regex.test(passw))
                 { 
@@ -213,34 +213,34 @@
                 }
                 else
                 { 
-                    console.log('Password must be between 8-16 characters');
+                    alert('Password must be between 8-16 characters');
                     return false;
                 }
             }
 
             function checkName(formId) {
-                var regex = /^[a-zA-Z ]{2,30}$/;
-                var elements2=  document.getElementById(formId).elements;
+                const regex = /^[a-zA-Z]{2,30}$/;
+                const elements2=  document.getElementById(formId).elements;
                 var name1 = elements2["name"].value;
-                if( regex.test(name1)) {
+                if( name1.match(regex)) {
                     return true;
                 }
                 else {
-                    console.log('Name should be between 2-30 characters');
+                    alert('Name should be between 2-30 characters');
                     return false;
                 }
             }
 
             function validateEmail(formId) {
 
-                var validRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-                var elements2=  document.getElementById(formId).elements;
+                const validRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                const elements2=  document.getElementById(formId).elements;
                 var email = elements2["mail"].value;
                 if( regex.test(email)) {
                     return true;
                 }
                 else {
-                    console.log('Email incorrect');
+                    alert('Email incorrect');
                     return false;
                 }
             }
@@ -248,6 +248,9 @@
                 return  checkName(formId) && checkPassword(formId) && validateEmail(formId);
             }
         </script>
+        <div class="animacioni">
+            <div class="content"><img src="images/small-car.png" width = "100" alt="small"></div>
+        </div>
         <footer>
             <div><br>
                 Copyright &#169 -2020 All Right Reserved
