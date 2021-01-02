@@ -37,6 +37,7 @@
 <div class='container' id='divboard'>
     <div class='collideme' data-dynamic='false'></div>
     <div class='collideme' data-dynamic='true' id='divtwo'></div>
+    <p id="mesazhi"></p>
 </div>
 <script>
     const collider = {
@@ -53,10 +54,11 @@
                     hasJustCollided = true;
                     if (!this.moveableDiv.ref.classList.contains('collision-state')) {
                         this.moveableDiv.ref.classList.add('collision-state');
-                        window.alert("Dy objektet jane ndeshur!");
+                        document.getElementById("mesazhi").innerHTML = "Objektet jane ndeshur!";
                     }
                 } else if (this.moveableDiv.ref.classList.contains('collision-state') && !hasJustCollided) {
                     this.moveableDiv.ref.classList.remove('collision-state');
+                    document.getElementById("mesazhi").innerHTML = "Objektet nuk jane ndeshur!";
                 }
             }
         },

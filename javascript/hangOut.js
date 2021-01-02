@@ -51,13 +51,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-var cars = ["BMW", "AUDI", "Mercedes", "Ford", "VW", "Chevrolet"];
+var cars = ["BMW", "AUDI", "Mercedes", "Ford", "VW", "Chevrolet", "Ferrari", "Range Rover", "Lamborghini"];
 var input,output="";
 
+var str = cars[4];
+var patt = /olks/i;
+var patt1 = /V/g;
+var result = str.replace(patt,"OLKS");
+var result1 = str.match(patt1);
+
+
 function getStats(){
+    window.alert("Rezultati i kerkimit me 'i': "+result+
+        "\nRezultati i kerkimit me 'g': "+result1);
     var i;
     for (i=0;i<cars.length;i++){
-        if (i<5)
+        if (i<cars.length-1)
             output += (i+1)+". "+cars[i]+";\n";
         else
             output += (i+1)+". "+cars[i]+".";
@@ -88,6 +97,12 @@ function getStats(){
             "<p>Golf 2020: 4.0s (0-100 kmh)</p>"; break;
         case 6: document.getElementById("statRes").innerHTML =
             "<p>Corvette C6 2020: 3.2s (0-100 kmh)</p>"; break;
+        case 7: document.getElementById("statRes").innerHTML =
+            "<p>Ferrari F8 TRIBUTO 2020: 2.8s (0-100 kmh)</p>"; break;
+        case 8: document.getElementById("statRes").innerHTML =
+            "<p>Land Rover Range Rover 2020: 6.2s (0-100 kmh)</p>"; break;
+        case 9: document.getElementById("statRes").innerHTML =
+            "<p>Lamborghini Urus 2020: 4.9s (0-100 kmh)</p>"; break;
         default: window.alert("Shtypni numer valid!");
     }
     output="";
