@@ -96,7 +96,7 @@
             
         </div>
         <div id="email">
-            <form action="mailto:osmankida@gmail.com" method="post" enctype="text/plain">
+            <form action="mailto:osmankida@gmail.com" id="formId1" method="post" enctype="text/plain"  onSubmit="return (validateForAll('formId1') )">
                 Emri:<br>
                 <input type="text" name="name"><br>
                 <input type="checkbox" id="vehicle1" name="vehicle1" value="Makine">
@@ -123,9 +123,9 @@
                     <option value="Gjakov&#235">
                 </datalist>
                 <br></br>E-mail:<br>
-                <input type="text" name="mail"><br>
+                <input type="text" name="mail" id="mail"><br>
                 Password:<br>
-                <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
+                <input type="text" id="pwd" name="pwd" autocomplete="off"><br><br>
                 Mesazhi për porosi:<br>
                 <input type="text" name="comment" size="30"><br><br>
                 <input type="submit" value="D&#235rgo">
@@ -133,7 +133,7 @@
             </form>
         </div>
         <div id="Email_to_menager">
-            <form action="mailto:valdrinajvazi@hotmail.com" method="post" enctype="text/plain">
+            <form action="mailto:valdrinajvazi@hotmail.com" id="formId2"method="post" enctype="text/plain"  onSubmit="return (validateForAll('formId2'))" >
                 Emri:<br>
                 <input type="text" name="name"><br>
                 gjinia:<br>
@@ -144,9 +144,9 @@
                 <input type="radio" id="other" name="gender" value="other">
                 <label for="other">tjet&#235r</label>
                 <br></br>E-mail:<br>
-                <input type="text" name="mail"><br>
+                <input type="text" name="mail" id="mail"><br>
                 Password:<br>
-                <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
+                <input type="text" id="pwd" name="pwd" autocomplete="off"><br><br>
                 Mesazhi për Menaxherin:<br>
                 <input type="text" name="comment" size="30"><br><br>
                 <input type="submit" value="D&#235rgo">
@@ -154,9 +154,9 @@
             </form>
         </div>
         <div id="Email_to_agent">
-            <form action="mailto:geti2013@gmail.com" method="post" enctype="text/plain">
+            <form name= "formValidate" id="formId3" action="mailto:geti2013@gmail.com" method="post" enctype="text/plain" onSubmit="return checkName('formId3') && checkPassword('formId3') && validateEmail('formId3')">
                 Emri:<br>
-                <input type="text" name="name"><br>
+                <input type="text" name="name" id="name"><br>
                 gjinia:<br>
                 <input type="radio" id="male" name="gender" value="male">
                 <label for="male">Mashkull</label><br>
@@ -165,9 +165,9 @@
                 <input type="radio" id="other" name="gender" value="other">
                 <label for="other">tjet&#235r</label>
                 <br></br>E-mail:<br>
-                <input type="text" name="mail"><br>
+                <input type="text" name="mail" id="mail"><br>
                 Password:<br>
-                <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
+                <input type="text" id="pwd" name="pwd" autocomplete="off"><br><br>
                 Mesazhi për agjentin:<br>
                 <input type="text" name="comment" size="30"><br><br>
                 <input type="submit" value="D&#235rgo">
@@ -200,6 +200,52 @@
             function showPosition(position) {
                 window.alert("Latitude: "+position.coords.latitude +
                     "; Longitude: " + position.coords.longitude+";");
+            }
+
+            function checkPassword(formId) 
+            { 
+                var regex=  /^[a-zA-Z ]{8,16}$/;
+                var elements2=  document.getElementById(formId).elements;
+                var passw = elements2["pwd"].value;
+                if(regex.test(passw))
+                { 
+                    return true;
+                }
+                else
+                { 
+                    console.log('Password must be between 8-16 characters');
+                    return false;
+                }
+            }
+
+            function checkName(formId) {
+                var regex = /^[a-zA-Z ]{2,30}$/;
+                var elements2=  document.getElementById(formId).elements;
+                var name1 = elements2["name"].value;
+                if( regex.test(name1)) {
+                    return true;
+                }
+                else {
+                    console.log('Name should be between 2-30 characters');
+                    return false;
+                }
+            }
+
+            function validateEmail(formId) {
+
+                var validRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                var elements2=  document.getElementById(formId).elements;
+                var email = elements2["mail"].value;
+                if( regex.test(email)) {
+                    return true;
+                }
+                else {
+                    console.log('Email incorrect');
+                    return false;
+                }
+            }
+            function validateForAll(formId) {
+                return  checkName(formId) && checkPassword(formId) && validateEmail(formId);
             }
         </script>
         <footer>

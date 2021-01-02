@@ -246,3 +246,7 @@ svg{
     z-index: -1;
     
 }
+
+#pwd {
+    -webkit-text-security: disc;
+}

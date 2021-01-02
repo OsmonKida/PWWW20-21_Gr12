@@ -287,18 +287,33 @@ header{
 .animacioni{
     width: 950px;
     background-color:#ddd; padding: 25px;
+    animation: move1 5s linear infinite;
     float: left;
+
 }
 
 .content{
-    animation: move 5s linear infinite;
+    animation: move2 5s linear infinite;
 }
 
-@keyframes move {
+@keyframes move1 {
     0% {
-        transform:translate(0)
+        /* transform:translate(0); */
+        background-color: #ddd;
+    }
+    50% {
+        /* transform: translate(850px); */
+        background-color: white;
+    }
+}
+
+@keyframes move2 {
+    0% {
+        transform:translate(0);
+        /* background-color: #ddd; */
     }
     50% {
         transform: translate(850px);
+        /* background-color: white; */
     }
 }
